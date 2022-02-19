@@ -19,6 +19,7 @@
         ]
     },
     "scripts": {
+        "dev": "lerna run dev --stream --parallel",
         "prepare": "husky install",
         "pretty": "yarn prettier --write ."
     }
