@@ -1,0 +1,14 @@
+{
+  "name": "getir-todoapp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "workspaces": [
+    "packages/*"
+  ],
+  "private": true,
+  "author": "Feyzullah YILDIZ <ahmet.feyzullah.yildiz@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}
