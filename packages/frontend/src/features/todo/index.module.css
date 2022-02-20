@@ -7,13 +7,18 @@
     border-radius: 4px;
     gap: 6px;
 }
-.completed {
-    background-color: gray;
-    color: white;
-}
 .checkbox {
+    width: 20px;
+    height: 20px;
 }
-.text {
+.spantext {
+    flex: 1;
+    text-align: left;
+    text-decoration: line-through;
+    font-style: italic;
+    color: gray;
+}
+.inputtext {
     background-color: transparent;
     border: none;
     outline: none;

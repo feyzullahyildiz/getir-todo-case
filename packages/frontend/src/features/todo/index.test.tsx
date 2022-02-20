@@ -5,13 +5,15 @@ import { Todo } from './index';
 test('renders text', () => {
     const onDelete = jest.fn();
     const onSave = jest.fn();
+    const onUpdateComplete = jest.fn();
     render(
         <Todo
             id="1"
-            text="Foo"
+            name="Foo"
             onDelete={onDelete}
-            onSave={onSave}
-            status="completed"
+            onUpdateName={onSave}
+            onUpdateComplete={onUpdateComplete}
+            completed={false}
         />,
     );
     const item = screen.getByDisplayValue('Foo');
@@ -21,13 +23,15 @@ test('renders text', () => {
 test('icon check should not be rendered', () => {
     const onDelete = jest.fn();
     const onSave = jest.fn();
+    const onUpdateComplete = jest.fn();
     render(
         <Todo
             id="1"
-            text="Foo"
+            name="Foo"
             onDelete={onDelete}
-            onSave={onSave}
-            status="completed"
+            onUpdateName={onSave}
+            onUpdateComplete={onUpdateComplete}
+            completed={false}
         />,
     );
     expect(() => screen.getByTestId('svg-icon-check')).toThrow();

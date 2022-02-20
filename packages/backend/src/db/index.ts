@@ -1,11 +1,9 @@
+import type { TodoItem } from 'shared';
 import { Schema, model } from 'mongoose';
-interface ITodo {
-    name: string;
-    completed: boolean;
-}
-const todoSchema = new Schema<ITodo>({
+
+const todoSchema = new Schema<TodoItem>({
     name: String,
     completed: Boolean,
 });
 
-export const Todo = model<ITodo>('Todo', todoSchema);
+export const Todo = model<TodoItem>('Todo', todoSchema);
