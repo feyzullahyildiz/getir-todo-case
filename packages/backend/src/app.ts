@@ -12,6 +12,12 @@ app.use((req, res, next) => {
     }
     next();
 });
+if (process.env.FRONTEND_DIST) {
+    app.use(express.static(process.env.FRONTEND_DIST));
+    console.log('frontend inited');
+} else {
+    console.log('frontend not inited');
+}
 
 const createMiddleware = (req: Request, res: Response, next: NextFunction) => {
     try {
