@@ -1,3 +1,77 @@
+html,
+body,
+#root {
+    height: 100%;
+    margin: 0;
+}
+:root {
+    --primary: #aeea00;
+    --primaryLight: #e4ff54;
+    --primaryDark: #79b700;
+    --primaryText: #000000;
+
+    --secondary: #ff8a65;
+    --secondaryLight: #ffbb93;
+    --secondaryDark: #c75b39;
+    --secondaryText: #000000;
+
+    /* scale for 1.2 */
+    --ms-small-1: 1rem;
+    --ms-small-2: 1.2rem;
+    --ms-small-3: 1.44rem;
+    --ms-small-4: 1.728rem;
+    --ms-small-5: 2.074rem;
+    --ms-small-6: 2.488rem;
+
+    /* scale for 1.33 */
+    --ms-large-1: 1rem;
+    --ms-large-2: 1.333rem;
+    --ms-large-3: 1.777rem;
+    --ms-large-4: 2.369rem;
+    --ms-large-5: 3.157rem;
+    --ms-large-6: 4.209rem;
+}
+/* Small scale for small screens: */
+h1 {
+    font-size: var(--ms-small-6);
+}
+h2 {
+    font-size: var(--ms-small-5);
+}
+h3 {
+    font-size: var(--ms-small-4);
+}
+h4 {
+    font-size: var(--ms-small-3);
+}
+h5 {
+    font-size: var(--ms-small-2);
+}
+h6 {
+    font-size: var(--ms-small-1);
+}
+
+/* And large scale for larger screens */
+@media screen and (min-width: 800px) {
+    h1 {
+        font-size: var(--ms-large-6);
+    }
+    h2 {
+        font-size: var(--ms-large-5);
+    }
+    h3 {
+        font-size: var(--ms-large-4);
+    }
+    h4 {
+        font-size: var(--ms-large-3);
+    }
+    h5 {
+        font-size: var(--ms-large-2);
+    }
+    h6 {
+        font-size: var(--ms-large-1);
+    }
+}
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
@@ -6,7 +80,6 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
         monospace;

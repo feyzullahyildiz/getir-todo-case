@@ -1,0 +1,15 @@
+.app {
+    text-align: center;
+    background-color: var(--primary);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--primaryText);
+}
+
+.card {
+    min-width: 300px;
+}
+
