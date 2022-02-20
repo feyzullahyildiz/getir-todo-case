@@ -5,7 +5,15 @@ import { Todo } from './index';
 test('renders text', () => {
     const onDelete = jest.fn();
     const onSave = jest.fn();
-    render(<Todo id="1" text="Foo" onDelete={onDelete} onSave={onSave} />);
+    render(
+        <Todo
+            id="1"
+            text="Foo"
+            onDelete={onDelete}
+            onSave={onSave}
+            status="completed"
+        />,
+    );
     const item = screen.getByDisplayValue('Foo');
     expect(item).toBeInTheDocument();
 });
@@ -13,7 +21,15 @@ test('renders text', () => {
 test('icon check should not be rendered', () => {
     const onDelete = jest.fn();
     const onSave = jest.fn();
-    render(<Todo id="1" text="Foo" onDelete={onDelete} onSave={onSave} />);
+    render(
+        <Todo
+            id="1"
+            text="Foo"
+            onDelete={onDelete}
+            onSave={onSave}
+            status="completed"
+        />,
+    );
     expect(() => screen.getByTestId('svg-icon-check')).toThrow();
     expect(() => screen.getByTestId('svg-icon-delete')).not.toThrow();
 });

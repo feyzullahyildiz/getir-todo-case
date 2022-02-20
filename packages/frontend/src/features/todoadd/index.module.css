@@ -1,0 +1,11 @@
+.todoadd {
+    display: flex;
+    align-items: center;
+}
+.input {
+    flex: 1;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--primary);
+    outline: none;
+}

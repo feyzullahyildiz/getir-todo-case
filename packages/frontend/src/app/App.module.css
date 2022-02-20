@@ -7,12 +7,26 @@
     align-items: center;
     /* justify-content: center; */
     color: var(--primaryText);
+    position: relative;
 }
 
-.card {
+.todolist {
     min-width: 300px;
     width: 70vw;
     max-width: 600px;
     overflow: auto;
-    margin-bottom: 20vh;
+    margin-bottom: 10vh;
+}
+.spacer {
+    flex: 1;
+}
+.newtodo {
+    position: relative;
+    min-width: 300px;
+    width: 70vw;
+    max-width: 600px;
+}
+.newtodocard {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
