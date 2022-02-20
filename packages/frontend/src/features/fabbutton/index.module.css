@@ -1,0 +1,24 @@
+.fab {
+    border-radius: 50%;
+    background-color: var(--primary);
+    width: 36px;
+    height: 36px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color .2s ease-out;
+}
+.fab:hover {
+    background-color: var(--secondaryDark);
+    background-color: var(--primaryLight);
+}
+.fab:active {
+    background-color: var(--primaryDark);
+}
+.mini {
+    width: 24px;
+    height: 24px;
+    
+}

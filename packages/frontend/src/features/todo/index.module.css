@@ -5,6 +5,7 @@
     background-color: var(--primary);
     margin: 4px 0;
     border-radius: 4px;
+    gap: 6px;
 }
 .checkbox {
 }
@@ -13,4 +14,13 @@
     border: none;
     outline: none;
     border-bottom: 1px solid var(--primaryDark);
+    flex: 1;
+}
+
+.icon {
+    fill: var(--primaryDark);
+    fill: var(--secondaryDark);
+    /* fill: white; */
+    height: 16px;
+    width: 16px;
 }
