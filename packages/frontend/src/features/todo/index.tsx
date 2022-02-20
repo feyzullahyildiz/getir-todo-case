@@ -3,6 +3,7 @@ import { DeleteIcon, CheckIcon } from '../../common';
 import { FabButton } from '../fabbutton';
 import cn from 'classnames';
 import styles from './index.module.css';
+import { Checkbox } from '..';
 interface Props {
     id: string;
     name: string;
@@ -15,7 +16,7 @@ export const Todo: React.FC<Props> = ({
     id,
     name: text,
     onDelete,
-    onUpdateName: onSave,
+    onUpdateName,
     onUpdateComplete,
     completed,
 }) => {
@@ -31,10 +32,10 @@ export const Todo: React.FC<Props> = ({
     const className = cn(styles.todo, completed ? styles.completed : null);
     return (
         <div className={className}>
-            <input
+            <Checkbox
                 className={styles.checkbox}
                 checked={completed}
-                onChange={(e) => onUpdateComplete(id, e.target.checked)}
+                onChange={() => onUpdateComplete(id, !completed)}
                 type="checkbox"
             />
             {completed ? (
@@ -49,7 +50,7 @@ export const Todo: React.FC<Props> = ({
                 />
             )}
             {isTextDirty && (
-                <FabButton onClick={() => onSave(id, textValue)}>
+                <FabButton onClick={() => onUpdateName(id, textValue)}>
                     <CheckIcon
                         data-testid="svg-icon-check"
                         className={styles.icon}
