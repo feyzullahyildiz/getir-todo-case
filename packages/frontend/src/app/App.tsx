@@ -63,7 +63,7 @@ export const App: React.FC = () => {
             <div className={styles.spacer}></div>
             <div className={styles.newtodo}>
                 <Card className={styles.newtodocard}>
-                    <TodoAdd onSubmit={onAddTodo} />
+                    <TodoAdd onTodoAdd={onAddTodo} />
                 </Card>
             </div>
         </div>

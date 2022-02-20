@@ -6,23 +6,24 @@ import styles from './index.module.css';
 import { nameChanged } from './todoadd-slice';
 
 interface Props {
-    onSubmit: (name: string) => void;
+    onTodoAdd: (name: string) => void;
 }
-export const TodoAdd: React.FC<Props> = ({ onSubmit }) => {
+export const TodoAdd: React.FC<Props> = ({ onTodoAdd }) => {
     const name = useAppSelector((state) => state.todoAdd.name);
     const dispatch = useAppDispatch();
-    const onClick = () => {
+    const onSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
+        e.preventDefault();
         if (name.trim().length < 2) {
             return;
         }
-        onSubmit(name);
-        nameChanged('');
+        onTodoAdd(name);
+        dispatch(nameChanged(''));
     };
     const onTextChange: ChangeEventHandler<HTMLInputElement> = (e) => {
         dispatch(nameChanged(e.target.value));
     };
     return (
-        <div className={styles.todoadd}>
+        <form onSubmit={onSubmit} className={styles.todoadd}>
             <input
                 className={styles.input}
                 value={name}
@@ -30,9 +31,9 @@ export const TodoAdd: React.FC<Props> = ({ onSubmit }) => {
                 placeholder="Type new Todo"
                 type="text"
             />
-            <FabButton onClick={onClick}>
+            <FabButton type="submit">
                 <AddIcon />
             </FabButton>
-        </div>
+        </form>
     );
 };
